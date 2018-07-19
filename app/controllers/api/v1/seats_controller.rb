@@ -15,7 +15,7 @@ class Api::V1::SeatsController < ApplicationController
     if @seat.save
       render json: @seat, status: :accepted
     else
-      render :json { errors: @seat.errors.full_message }, status: :unprocessible_entity
+      render json: { errors: @seat.errors.full_message }, status: :unprocessible_entity
     end
   end
 

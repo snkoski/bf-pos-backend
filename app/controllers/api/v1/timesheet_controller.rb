@@ -15,7 +15,7 @@ class Api::V1::TimesheetController < ApplicationController
     if @timesheet.save
       render json: @timesheet, status: :accepted
     else
-      render :json { errors: @timesheet.errors.full_message }, status: :unprocessible_entity
+      render json: { errors: @timesheet.errors.full_message }, status: :unprocessible_entity
     end
   end
 

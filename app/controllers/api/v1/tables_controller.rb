@@ -15,7 +15,7 @@ class Api::V1::TablesController < ApplicationController
     if @table.save
       render json: @table, status: :accepted
     else
-      render :json { errors: @table.errors.full_message }, status: :unprocessible_entity
+      render json: { errors: @table.errors.full_message }, status: :unprocessible_entity
     end
   end
 

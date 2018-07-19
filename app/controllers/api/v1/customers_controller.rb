@@ -15,7 +15,7 @@ class Api::V1::CustomersController < ApplicationController
     if @customer.save
       render json: @customer, status: :accepted
     else
-      render :json { errors: @customer.errors.full_message }, status: :unprocessible_entity
+      render json: { errors: @customer.errors.full_message }, status: :unprocessible_entity
     end
   end
 

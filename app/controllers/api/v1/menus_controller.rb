@@ -15,7 +15,7 @@ class Api::V1::MenusController < ApplicationController
     if @menu.save
       render json: @menu, status: :accepted
     else
-      render :json { errors: @menu.errors.full_message }, status: :unprocessible_entity
+      render json: { errors: @menu.errors.full_message }, status: :unprocessible_entity
     end
   end
 

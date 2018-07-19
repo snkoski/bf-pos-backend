@@ -15,7 +15,7 @@ class Api::V1::PreppedIngredientsController < ApplicationController
     if @prepped_ingredient.save
       render json: @prepped_ingredient, status: :accepted
     else
-      render :json { errors: @prepped_ingredient.errors.full_message }, status: :unprocessible_entity
+      render json: { errors: @prepped_ingredient.errors.full_message }, status: :unprocessible_entity
     end
   end
 

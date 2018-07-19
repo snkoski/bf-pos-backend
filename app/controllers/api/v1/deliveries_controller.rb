@@ -15,7 +15,7 @@ class Api::V1::DeliveriesController < ApplicationController
     if @delivery.save
       render json: @delivery, status: :accepted
     else
-      render :json { errors: @delivery.errors.full_message }, status: :unprocessible_entity
+      render json: { errors: @delivery.errors.full_message }, status: :unprocessible_entity
     end
   end
 
