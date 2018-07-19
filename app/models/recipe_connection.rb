@@ -1,2 +1,0 @@
-class RecipeConnection < ApplicationRecord
-end
