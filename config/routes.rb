@@ -13,6 +13,9 @@ Rails.application.routes.draw do
       resources :tables
       resources :timesheets
       resources :users
+      resources :reservations
+      resources :waitlists
+      resources :static_tables
     end
   end
 end

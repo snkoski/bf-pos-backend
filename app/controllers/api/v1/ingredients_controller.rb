@@ -37,7 +37,7 @@ class Api::V1::IngredientsController < ApplicationController
   private
 
   def ingredient_params
-    params.permit()
+    params.permit(:name, :price, :amount)
   end
 
   def find_ingredient

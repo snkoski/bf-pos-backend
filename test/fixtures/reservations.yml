@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  guest_name: MyString
+  number_of_guests: 1
+  date: 2018-07-22 11:52:30
+  time: 2018-07-22 11:52:30
+  special_requests: MyText
+  table_number: 1
+
+two:
+  guest_name: MyString
+  number_of_guests: 1
+  date: 2018-07-22 11:52:30
+  time: 2018-07-22 11:52:30
+  special_requests: MyText
+  table_number: 1

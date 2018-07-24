@@ -15,6 +15,8 @@
 # Table.create(user_id: ,table_number: )
 # Customer.create(table_id: ,seat_number: )
 # Order.create(customer_id: ,recipe_id: )
+# Reservation.create(guest_name: ,number_of_guests: ,date: ,time: ,table_number: ,:special_requests)
+# Waitlist.create(guest_name:, phone_number:, number_of_guests:, date:, start_waitlist:)
 
 # Recipe.create(name: "Cheeseburger",description: "Hambuger with cheese",instructions: "Put cheese on a burger", price: 12.00)
 # Ingredient.create(name: "Ground Beef")
@@ -75,3 +77,15 @@
 # Order.create(customer_id: 8,recipe_id: 2)
 # Order.create(customer_id: 9,recipe_id: 3)
 # Order.create(customer_id: 1,recipe_id: 5)
+
+# Reservation.create(guest_name: "Tom Johnson", number_of_guests: 2, date: "2018-07-22 23:00:00", time: "2018-07-22 23:00:00", table_number: 1, special_requests: "Please seat us at table 1")
+# Reservation.create(guest_name: "Stan Smith", number_of_guests: 4, date: "2018-07-22 20:00:00", time: "2018-07-22 20:00:00")
+# Reservation.create(guest_name: "Michael Jordan", number_of_guests: 4, date: "2018-07-22 20:30:00", time: "2018-07-22 20:30:00", table_number: 2, special_requests: "I'm Michael Jordan")
+# Reservation.create(guest_name: "Hulk Hogan", number_of_guests: 3, date: "2018-07-23 19:00:00", time: "2018-07-23 19:00:00", special_requests: "Brother")
+
+# Waitlist.create(guest_name: "Regular Joe", phone_number: "217-854-9632", number_of_guests: 2, date: "2018-07-23 19:00:00", start_waitlist: "2018-07-23 19:00:00")
+# Waitlist.create(guest_name: "John Doe", phone_number: "217-420-6969", number_of_guests: 4, date: "2018-07-23 19:05:00", start_waitlist: "2018-07-23 19:05:00")
+# Waitlist.create(guest_name: "John Smith", phone_number: "217-854-5698", number_of_guests: 4, date: "2018-07-23 19:07:00", start_waitlist: "2018-07-23 19:07:00")
+# Waitlist.create(guest_name: "Guy Person", phone_number: "321-654-9874", number_of_guests: 3, date: "2018-07-23 19:15:00", start_waitlist: "2018-07-23 19:15:00")
+
+StaticTable.create(occupied: false)

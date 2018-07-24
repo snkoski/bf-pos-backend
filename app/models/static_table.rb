@@ -1,0 +1,2 @@
+class StaticTable < ApplicationRecord
+end

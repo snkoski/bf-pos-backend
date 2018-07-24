@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_19_173855) do
+ActiveRecord::Schema.define(version: 2018_07_24_192131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,24 @@ ActiveRecord::Schema.define(version: 2018_07_19_173855) do
     t.string "minimum_time"
   end
 
+  create_table "reservations", force: :cascade do |t|
+    t.string "guest_name"
+    t.integer "number_of_guests"
+    t.datetime "date"
+    t.datetime "time"
+    t.text "special_requests"
+    t.integer "table_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "cancelled"
+  end
+
+  create_table "static_tables", force: :cascade do |t|
+    t.boolean "occupied"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "tables", force: :cascade do |t|
     t.integer "user_id"
     t.boolean "occupied"
@@ -80,6 +98,18 @@ ActiveRecord::Schema.define(version: 2018_07_19_173855) do
     t.boolean "foh"
     t.boolean "boh"
     t.integer "admin"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "waitlists", force: :cascade do |t|
+    t.string "guest_name"
+    t.string "phone_number"
+    t.integer "number_of_guests"
+    t.datetime "date"
+    t.datetime "start_waitlist"
+    t.datetime "end_waitlist"
+    t.boolean "cancelled"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
