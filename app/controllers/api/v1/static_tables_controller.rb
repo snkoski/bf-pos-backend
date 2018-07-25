@@ -37,7 +37,7 @@ class Api::V1::StaticTablesController < ApplicationController
   private
 
   def static_table_params
-    params.permit()
+    params.permit(:occupied)
   end
 
   def find_static_table
