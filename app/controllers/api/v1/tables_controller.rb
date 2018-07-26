@@ -37,7 +37,7 @@ class Api::V1::TablesController < ApplicationController
   private
 
   def table_params
-    params.permit()
+    params.permit(:table_number, :occupied, :user_id)
   end
 
   def find_table

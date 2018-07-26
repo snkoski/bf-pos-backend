@@ -37,7 +37,7 @@ class Api::V1::CustomersController < ApplicationController
   private
 
   def customer_params
-    params.permit()
+    params.permit(:table_id, :seat_number)
   end
 
   def find_customer
