@@ -1,7 +1,11 @@
 class Api::V1::TablesController < ApplicationController
   before_action :find_table, only: [:show, :update, :destroy]
   def index
+
+    # @tables = Trip.where([:occupied] false)
+
     @tables = Table.all
+
     render json: @tables
   end
 

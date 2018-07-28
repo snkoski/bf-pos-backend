@@ -7,7 +7,7 @@ class Customer < ApplicationRecord
     self.seated.nil?
   end
 
-  belongs_to :table
+  # belongs_to :table
   has_many :orders
   has_many :recipes, through: :orders
 end
