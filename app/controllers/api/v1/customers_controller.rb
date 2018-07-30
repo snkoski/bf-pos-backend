@@ -1,5 +1,5 @@
 class Api::V1::CustomersController < ApplicationController
-  before_action :find_customer, only: [:show, :update, :destroy]
+  before_action :find_customer, only: [:show, :update, :destroy, :add_recipe]
   def index
     @customers = Customer.all
     render json: @customers
@@ -32,6 +32,12 @@ class Api::V1::CustomersController < ApplicationController
     else
       render json: { errors: @customer.errors.full_messages }, status: :unprocessible_entity
     end
+  end
+
+  def add_recipe
+    byebug
+    @customer
+
   end
 
   private

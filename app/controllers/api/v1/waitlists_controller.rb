@@ -37,7 +37,7 @@ class Api::V1::WaitlistsController < ApplicationController
   private
 
   def waitlist_params
-    params.permit(:guest_name, :phone_number, :number_of_guests, :date, :start_waitlist)
+    params.permit(:guest_name, :phone_number, :number_of_guests, :date, :start_waitlist, :cancelled, :end_waitlist)
   end
 
   def find_waitlist

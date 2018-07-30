@@ -19,6 +19,8 @@ Rails.application.routes.draw do
       resources :reservations
       resources :waitlists
       resources :static_tables
+      resources :orders
+      # post 'customers/:id/recipes/:id', to: 'customers#add_recipe'
     end
   end
 end
