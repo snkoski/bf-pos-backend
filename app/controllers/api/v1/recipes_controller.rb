@@ -1,5 +1,5 @@
 class Api::V1::RecipesController < ApplicationController
-  before_action :find_recipe, only: [:show, :update, :destroy]
+  before_action :find_recipe, only: [:show, :update, :destroy, :get_ingredients]
   def index
     @recipes = Recipe.all
     render json: @recipes
@@ -32,6 +32,11 @@ class Api::V1::RecipesController < ApplicationController
     else
       render json: { errors: @recipe.errors.full_messages }, status: :unprocessible_entity
     end
+  end
+
+  def get_ingredients
+    @recipe
+    render json: @recipe.ingredients
   end
 
   private

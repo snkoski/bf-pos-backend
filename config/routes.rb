@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       resources :waitlists
       resources :static_tables
       resources :orders
+      get 'recipes/:id/ingredients', to: 'recipes#get_ingredients'
       # post 'customers/:id/recipes/:id', to: 'customers#add_recipe'
     end
   end
