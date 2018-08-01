@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :menus
       resources :prepped_ingredients
       resources :recipes
+
       resources :seats
       resources :tables
       resources :timesheets
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
       resources :orders
       resources :used_ingredients
       get 'recipes/:id/ingredients', to: 'recipes#get_ingredients'
+      get 'recipes/:id/proportions', to: 'recipes#get_proportions'
       # post 'customers/:id/recipes/:id', to: 'customers#add_recipe'
     end
   end

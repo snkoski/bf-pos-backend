@@ -1,5 +1,5 @@
 class Api::V1::IngredientsController < ApplicationController
-  before_action :find_ingredient, only: [:show, :update, :destroy]
+  before_action :find_ingredient, only: [:show, :update, :destroy, :get_proportion]
   def index
     @ingredients = Ingredient.all
     render json: @ingredients
@@ -33,6 +33,11 @@ class Api::V1::IngredientsController < ApplicationController
       render json: { errors: @ingredient.errors.full_messages }, status: :unprocessible_entity
     end
   end
+
+  # def get_proportion
+  #   @ingredient
+  #   render json: @ingredient
+  # end
 
   private
 

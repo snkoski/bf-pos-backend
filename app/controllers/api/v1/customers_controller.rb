@@ -34,11 +34,11 @@ class Api::V1::CustomersController < ApplicationController
     end
   end
 
-  def add_recipe
-    byebug
-    @customer
-
-  end
+  # def add_recipe
+  #   byebug
+  #   @customer
+  #
+  # end
 
   private
 

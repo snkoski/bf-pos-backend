@@ -1,5 +1,5 @@
 class Api::V1::RecipesController < ApplicationController
-  before_action :find_recipe, only: [:show, :update, :destroy, :get_ingredients]
+  before_action :find_recipe, only: [:show, :update, :destroy, :get_ingredients, :get_proportions]
   def index
     @recipes = Recipe.all
     render json: @recipes
@@ -39,10 +39,20 @@ class Api::V1::RecipesController < ApplicationController
     render json: @recipe.ingredients
   end
 
+  def get_proportions
+    @recipe
+    proportions = @recipe.ingredients.map do |i|
+      i.proportions.find do |p|
+        p.recipe_id == @recipe.id
+      end
+    end
+    render json: proportions
+  end
+
   private
 
   def recipe_params
-    params.permit()
+    params.permit(:name, :description, :instructions, :price, :minimum_time)
   end
 
   def find_recipe
